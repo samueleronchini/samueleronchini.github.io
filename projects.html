@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dr. Samuele Ronchini - Astrophysicist specializing in gravitational-wave physics and multi-messenger astronomy">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Dr. Samuele Ronchini | Astrophysics Researcher</title>
+    
+    <link rel="stylesheet" href="styles/dark-theme-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --primary-color-light: #7ab3f1;
+            --primary-color-dark: #2d6cb5;
+            --primary-gradient: linear-gradient(135deg, #4a90e2 0%, #7c4dff 100%);
+            --shade-transition: 0.3s ease-in-out;
+            --accent-color: #7c4dff;
+            --background-dark: #1a1a2e;
+            --text-primary: #e9ecef;
+            --text-secondary: #b0b3b8;
+            --surface-dark: #242442;
+        }
+    </style>
+    
+    <meta name="color-scheme" content="dark light">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__brand">
+                <img src="assets/images/3_orizzontale.jpg" alt="Samuele Ronchini logo" class="nav__avatar">
+                <span class="nav__name">Samuele Ronchini</span>
+            </div>
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <div class="nav__links" id="primary-navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="outreach.html">Outreach</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- <section class="hero" style="padding: 1.2rem 0; min-height: 0;">
+            <div class="hero__left" style="display: flex; align-items: center; padding: 0.5rem 1rem; flex: 0 0 auto;">
+                <div class="profile" style="display:flex; flex-direction:row; gap:0.75rem; align-items:center;">
+                    <img src="assets/images/photo_sjs8171.jpg" alt="Dr. Samuele Ronchini" class="profile__image" style="width:196px; height:196px; object-fit:cover; flex:0 0 196px;">
+                    <div style="display:flex; flex-direction:column; gap:0.35rem;">
+                        <div class="profile__links" style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; margin:0;">
+                            <a href="https://github.com/samuele-ronchini" class="btn btn--primary" style="padding:0.4rem 0.6rem; font-size:0.9rem;">View GitHub</a>
+                            <a href="publications.html" class="btn btn--secondary" style="padding:0.4rem 0.6rem; font-size:0.9rem;">Publications</a>
+                            <a href="assets/docs/samuele-ronchini-cv.pdf" class="btn btn--outline" style="padding:0.35rem 0.6rem; font-size:0.85rem;">Download CV</a>
+                        </div>
+                        <div class="profile__social" style="display:flex; gap:0.5rem; font-size:0.85rem; margin-top:0.25rem;">
+                            <a href="https://github.com/samuele-ronchini" target="_blank" rel="noopener" class="social-icon">GitHub</a>
+                            <a href="https://scholar.google.com/samuele-ronchini" target="_blank" rel="noopener" class="social-icon">Scholar</a>
+                            <a href="https://orcid.org/samuele-ronchini" target="_blank" rel="noopener" class="social-icon">ORCID</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <div class="hero__right" >
+                <div class="intro">
+                    <h1>Research Projects & Collaborations</h1> 
+                    <h2>Multi-Messenger Astronomy at the Frontiers</h2>
+                    <p class="intro__bio">
+                        Leading and contributing to international collaborations that connect gravitational wave detectors 
+                        with high-energy space observatories. Developing real-time analysis pipelines and shaping the science 
+                        case for next-generation multi-messenger facilities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-heading" style="margin-bottom: 2rem;">
+                
+                <h2>Roles and responsibilities</h2>
+            </div>
+            <div class="card-grid" style="margin-bottom: 3rem;">
+                <article class="card">
+                    <h3>LVK–Swift–Fermi Liaison</h3>
+                    <div class="project-meta">
+                        <span>Coordinator</span>
+                        <span>2024 &ndash; Present</span>
+                    </div>
+                    <p>Leading coordination of joint gravitational wave and electromagnetic searches between LIGO-Virgo-KAGRA, Swift, and Fermi collaborations.</p>
+                    <ul>
+                        <li>Coordinating observational strategy during LVK O4 observing run</li>
+                        <li>Developing joint analysis pipelines for GW+EM transient detection</li>
+                        <li>Facilitating real-time communications between collaboration teams</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Swift-BAT Real-Time Subthreshold Search</h3>
+                    <div class="project-meta">
+                        <span>Analyst & Developer</span>
+                        <span>2023 &ndash; Present</span>
+                    </div>
+                    <p>Development and monitoring of the real-time low-latency Swift-BAT sub-threshold analysis pipeline for targeted follow-up of external transients.</p>
+                    <ul>
+                        <li>Real-time analysis of Swift-BAT data for GW counterpart searches</li>
+                        <li>Targeted follow-up of gravitational wave candidates</li>
+                        <li>Integration with LVK alert systems</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Multi-messenger Astronomy in the ET Era</h3>
+                    <div class="project-meta">
+                        <span>Research Team Member</span>
+                        <span>2020 &ndash; Present</span>
+                    </div>
+                    <p>METE is a project funded for developing multi-messenger science for Einstein Telescope. As research team member, I am involved in various aspects of the project, including:</p>
+                    <ul>
+                        <li>Predicting joint GW+EM detection rates for ET</li>
+                        <li>Developing optimal observational strategies</li>
+                        <li>Connecting ET science with future high-energy observatories</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-heading" style="margin-bottom: 2rem;">
+                
+                <h2>International networks & memberships</h2>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>LIGO, Virgo and KAGRA (LVK) Collaboration</h3>
+                    <p>Member since 2019. Work in the Multi-messenger Transients group as analyst of GW searches targeted on GRBs, using PyGRB and Xpipeline. Currently coordinator of the LVK–Fermi–Swift liaison.</p>
+                </article>
+                <article class="card">
+                    <h3>Neil Gehrels Swift Observatory (Swift)</h3>
+                    <p>Active member working on development and monitoring of the real-time low-latency <a href="https://www.swift.psu.edu/guano/">Swift-BAT sub-threshold analysis pipeline (GUANO)</a>. Contributing to the observational strategy of Swift-XRT/UVOT during LVK O4 run.</p>
+                </article>
+                <article class="card">
+                    <h3>Einstein Telescope (ET) Collaboration</h3>
+                    <p>Member of Division 4: Multi-messenger Observations. Working on predictions of joint GW+EM detections and optimal observational strategy for ET.</p>
+                </article>
+                <article class="card">
+                    <h3>Lunar Gravitational Wave Antenna (LGWA)</h3>
+                    <p>Contributing to the definition of the multi-messenger science case, focusing on electromagnetic emission during mergers and potential astronomical facility partnerships.</p>
+                </article>
+                <article class="card">
+                    <h3>THESEUS Consortium</h3>
+                    <p><a href="https://theseus.astro-ge.ch">THESEUS</a> is a mission concept for the next generation of gamma-ray burst (GRB) observatories. I am involved in population and GRB science and multi-messenger working groups, establishing synergies between THESEUS and future GW observatories for compact binary merger detection.</p>
+                </article>
+                <article class="card">
+                    <h3>ENGRAVE & GRAWITA Collaborations</h3>
+                    <p>Part of the theory group for modeling astrophysical transients associated with GW signals.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="mailto:samuele.ronchini@gssi.it">Email</a>
+            <a href="https://orcid.org/0000-0003-0020-687X">ORCID</a>
+            <a href="https://scholar.google.com/citations?hl=it&user=CRIAk_IAAAAJ">Google Scholar</a>
+            <a href="https://github.com/samueleronchini">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Samuele-Ronchini">ResearchGate</a>
+        </nav>
+        <p>&copy; <span data-year></span> Samuele Ronchini. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script>
+        // populate current year and enable minimal accessibility focus outline
+        (function(){
+            var el = document.querySelector('[data-year]');
+            if(el) el.textContent = new Date().getFullYear();
+            // only show focus outlines when navigating via keyboard
+            function handleFirstTab(e){
+                if(e.key === 'Tab'){
+                    document.documentElement.classList.add('user-is-tabbing');
+                    window.removeEventListener('keydown', handleFirstTab);
+                }
+            }
+            window.addEventListener('keydown', handleFirstTab);
+        })();
+    </script>
+</body>
+</html>

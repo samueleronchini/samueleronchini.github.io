@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contact Dr. Samuele Ronchini - Astrophysicist specializing in gravitational-wave physics">
+    <meta name="theme-color" content="#0b0f14">
+    <title>Contact | Dr. Samuele Ronchini</title>
+    
+    <link rel="stylesheet" href="styles/dark-theme-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="color-scheme" content="dark light">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__brand">
+                <img src="assets/images/3_orizzontale.jpg" alt="Samuele Ronchini logo" class="nav__avatar">
+                <span class="nav__name">Samuele Ronchini</span>
+            </div>
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <div class="nav__links" id="primary-navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="outreach.html">Outreach</a>
+                <a href="contact.html" class="active">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="section-wrapper">
+            <div class="divider"></div>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Contact Details</h3>
+                    <p>Email: <a href="mailto:samuele.ronchini@gssi.it">samuele.ronchini@gssi.it</a></p>
+                    <p>
+                        Gran Sasso Science Institute<br>
+                        Via Iacobucci, 2<br>
+                        67100 L'Aquila, Italy
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="mailto:samuele.ronchini@gssi.it">Email</a>
+            <a href="https://orcid.org/0000-0003-0020-687X">ORCID</a>
+            <a href="https://scholar.google.com/citations?hl=it&user=CRIAk_IAAAAJ">Google Scholar</a>
+            <a href="https://github.com/samueleronchini">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Samuele-Ronchini">ResearchGate</a>
+        </nav>
+        <p>&copy; <span data-year></span> Samuele Ronchini. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script>
+        // populate current year and enable minimal accessibility focus outline
+        (function(){
+            var el = document.querySelector('[data-year]');
+            if(el) el.textContent = new Date().getFullYear();
+            // only show focus outlines when navigating via keyboard
+            function handleFirstTab(e){
+                if(e.key === 'Tab'){
+                    document.documentElement.classList.add('user-is-tabbing');
+                    window.removeEventListener('keydown', handleFirstTab);
+                }
+            }
+            window.addEventListener('keydown', handleFirstTab);
+        })();
+    </script>
+</body>
+</html>

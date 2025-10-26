@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV | Dr. Samuele Ronchini</title>
+
+    <!-- Primary theme (existing) -->
+    <link rel="stylesheet" href="styles/dark-theme-new.css" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific enhancements -->
+    <style>
+        :root{
+            --bg:#0b0f14;
+            --card:#0f1720;
+            --muted:#9aa6b2;
+            --accent:#6dd3ff;
+            --glass: rgba(255,255,255,0.03);
+            --max-width:1100px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        html[data-theme="light"]{
+            --bg:#f7fafc;
+            --card:#ffffff;
+            --muted:#374151;
+            --accent:#2563eb;
+            --glass: rgba(0,0,0,0.04);
+        }
+
+        html,body{background:linear-gradient(180deg,#020406 0%, #071022 40%, #05121a 100%); color:#e6eef6; margin:0; padding:0; -webkit-font-smoothing:antialiased;}
+        html[data-theme="light"], html[data-theme="light"] body{background:linear-gradient(180deg,#f7fafc 0%, #eef2f7 40%, #f9fafb 100%); color:#0b0f14;}
+        
+        main{max-width:var(--max-width); margin:2rem auto; padding:0 1rem;}
+
+        .cv-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:1.5rem;
+            flex-wrap:wrap;
+            gap:1rem;
+        }
+
+        .cv-header h1{
+            margin:0;
+            font-size:1.9rem;
+        }
+
+        .cv-actions{
+            display:flex;
+            gap:0.8rem;
+            flex-wrap:wrap;
+        }
+
+        .cv-btn{
+            display:inline-flex;
+            align-items:center;
+            gap:0.5rem;
+            padding:0.6rem 1.2rem;
+            border-radius:8px;
+            text-decoration:none;
+            font-size:0.9rem;
+            font-weight:600;
+            transition:all 0.2s ease;
+            border:2px solid var(--accent);
+            color:var(--accent);
+            background:var(--glass);
+        }
+
+        .cv-btn:hover{
+            background:var(--accent);
+            color:var(--bg);
+            transform:translateY(-2px);
+        }
+
+        .cv-btn--primary{
+            background:var(--accent);
+            color:var(--bg);
+        }
+
+        .cv-btn--primary:hover{
+            background:transparent;
+            color:var(--accent);
+        }
+
+        .cv-container{
+            background:var(--card);
+            border-radius:12px;
+            box-shadow:0 8px 30px rgba(2,6,12,0.6);
+            border:1px solid var(--glass);
+            overflow:hidden;
+            position:relative;
+        }
+
+        html[data-theme="light"] .cv-container{
+            box-shadow:0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .cv-viewer{
+            width:100%;
+            height:85vh;
+            border:none;
+            display:block;
+        }
+
+        .cv-fallback{
+            padding:3rem 2rem;
+            text-align:center;
+            color:var(--muted);
+        }
+
+        .cv-fallback p{
+            margin:1rem 0;
+            font-size:1.1rem;
+        }
+
+        .cv-fallback a{
+            color:var(--accent);
+            text-decoration:underline;
+        }
+
+        @media (max-width:720px){
+            .cv-header h1{
+                font-size:1.4rem;
+            }
+            .cv-viewer{
+                height:70vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__brand">
+                <img src="assets/images/3_orizzontale.jpg" alt="Samuele Ronchini logo" class="nav__avatar">
+                <span class="nav__name">Samuele Ronchini</span>
+            </div>
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <div class="nav__links" id="primary-navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html" class="active">CV</a>
+                <a href="outreach.html">Outreach</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cv-header">
+            <h1>Curriculum Vitae</h1>
+            <div class="cv-actions">
+                <a href="assets/docs/Samuele_Ronchini_CV.pdf" download class="cv-btn cv-btn--primary" aria-label="Download CV as PDF">
+                    📥 Download PDF
+                </a>
+                <a href="assets/docs/Samuele_Ronchini_CV.pdf" target="_blank" class="cv-btn" aria-label="Open CV in new tab">
+                    🔗 Open in New Tab
+                </a>
+            </div>
+        </div>
+
+        <div class="cv-container">
+            <iframe 
+                src="assets/docs/Samuele_Ronchini_CV.pdf#view=FitH" 
+                class="cv-viewer"
+                title="Samuele Ronchini CV"
+                aria-label="PDF viewer showing Samuele Ronchini's curriculum vitae">
+            </iframe>
+            <div class="cv-fallback" style="display:none;">
+                <p>Unable to display PDF inline.</p>
+                <p><a href="assets/docs/Samuele_Ronchini_CV.pdf" download>Click here to download the CV</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="mailto:samuele.ronchini@gssi.it">Email</a>
+            <a href="https://orcid.org/0000-0003-0020-687X">ORCID</a>
+            <a href="https://scholar.google.com/citations?hl=it&user=CRIAk_IAAAAJ">Google Scholar</a>
+            <a href="https://github.com/samueleronchini">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Samuele-Ronchini">ResearchGate</a>
+        </nav>
+        <p>&copy; <span data-year></span> Samuele Ronchini. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script>
+        // Populate current year
+        (function(){
+            var el = document.querySelector('[data-year]');
+            if(el) el.textContent = new Date().getFullYear();
+            
+            // Handle keyboard navigation
+            function handleFirstTab(e){
+                if(e.key === 'Tab'){
+                    document.documentElement.classList.add('user-is-tabbing');
+                    window.removeEventListener('keydown', handleFirstTab);
+                }
+            }
+            window.addEventListener('keydown', handleFirstTab);
+
+            // Show fallback if iframe fails to load
+            var iframe = document.querySelector('.cv-viewer');
+            var fallback = document.querySelector('.cv-fallback');
+            
+            iframe.addEventListener('error', function(){
+                iframe.style.display = 'none';
+                fallback.style.display = 'block';
+            });
+        })();
+    </script>
+</body>
+</html>

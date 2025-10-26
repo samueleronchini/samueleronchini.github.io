@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publications | Dr. Samuele Ronchini</title>
+
+    <!-- Primary theme (existing) -->
+    <link rel="stylesheet" href="styles/dark-theme-new.css" />
+    <meta name="color-scheme" content="dark light" />
+   <link rel="stylesheet" href="styles/dark-theme-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific enhancements -->
+    <style>
+        :root{
+            --bg:#0b0f14;
+            --card:#0f1720;
+            --muted:#9aa6b2;
+            --accent:#6dd3ff;
+            --glass: rgba(255,255,255,0.03);
+            --glass-2: rgba(255,255,255,0.02);
+            --radius:12px;
+            --max-width:1100px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        /* Light theme overrides for page-scoped variables */
+        html[data-theme="light"]{
+            --bg:#f7fafc;
+            --card:#ffffff;
+            --muted:#374151;
+            --accent:#2563eb;
+            --glass: rgba(0,0,0,0.04);
+            --glass-2: rgba(0,0,0,0.02);
+        }
+
+    html,body{background:linear-gradient(180deg,#020406 0%, #071022 40%, #05121a 100%); color:#e6eef6; margin:0; padding:0; -webkit-font-smoothing:antialiased;}
+    html[data-theme="light"], html[data-theme="light"] body{background:linear-gradient(180deg,#f7fafc 0%, #eef2f7 40%, #f9fafb 100%); color:#0b0f14;}
+        main{max-width:var(--max-width); margin:2rem auto; padding:0 1rem;}
+
+        /* Hero */
+    .hero{display:flex; gap:1.25rem; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:1.25rem; border-radius:var(--radius); box-shadow:0 6px 24px rgba(2,6,12,0.7); align-items:center; flex-wrap:wrap;}
+    html[data-theme="light"] .hero{background:linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01)); box-shadow:0 6px 24px rgba(0,0,0,0.06);}
+        .hero__left{flex:0 0 260px; display:flex; align-items:center; padding:0.4rem;}
+        .profile{display:flex; gap:1rem; align-items:center;}
+        .profile__image{width:180px; height:180px; object-fit:cover; border-radius:14px; background:linear-gradient(135deg,#0f1720,#071022); box-shadow:inset 0 -6px 18px rgba(0,0,0,0.5);}
+        .profile__links{display:flex; gap:0.5rem; flex-wrap:wrap;}
+        .btn{border-radius:10px; text-decoration:none; color:inherit; font-weight:600; font-size:0.9rem; border:1px solid transparent; padding:0.45rem 0.7rem;}
+        .btn--primary{background:linear-gradient(90deg,var(--accent),#7b61ff); color:#04121a; box-shadow:0 6px 18px rgba(109,211,255,0.06);}
+        .btn--secondary{background:transparent; border:1px solid var(--glass); color:var(--muted);}
+        .btn--outline{background:transparent; border:1px dashed var(--glass); color:var(--muted);}
+
+        .hero__right{flex:1 1 auto; min-width:280px;}
+        .intro h1{margin:0 0 0.15rem 0; font-size:1.9rem;}
+        .intro h2{margin:0 0.65rem 0; color:var(--muted); font-weight:500; font-size:1.05rem;}
+        .intro__bio{color:var(--muted); margin:0;}
+
+        /* Section headings */
+        .section-wrapper{margin-top:1.75rem; padding:0;}
+        .section-heading{display:flex; align-items:end; gap:1rem; margin-bottom:0.75rem; padding:0;}
+        .section-heading span{font-size:0.85rem; color:var(--accent); font-weight:700; letter-spacing:0.08em; background:linear-gradient(90deg, rgba(109,211,255,0.06), transparent); padding:0.2rem 0.5rem; border-radius:999px;}
+        .section-heading h2{margin:0; font-size:1.25rem;}
+        .intro{padding:0; margin:0;}
+        .intro h1{margin:0 0 1rem 0; font-size:1.9rem;}
+
+        /* divider */
+        .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent); border-radius:2px; margin:1rem 0;}
+
+        /* Grids & cards */
+        .article-grid, .card-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem; padding:0;}
+        .article-list{display:flex; flex-direction:column; gap:1rem; padding:0; margin:0;}
+    .card{background:var(--card); padding:1rem; border-radius:10px; box-shadow:0 8px 30px rgba(2,6,12,0.6); transition:transform .18s ease, box-shadow .18s ease; border:1px solid var(--glass); margin:0;}
+    .card:hover{transform:translateY(-6px); box-shadow:0 18px 48px rgba(2,6,12,0.7);}
+    html[data-theme="light"] .card{box-shadow:0 8px 30px rgba(0,0,0,0.06);} 
+        .publication-item h3{margin:0 0 0.35rem 0;}
+        .meta{color:var(--muted); font-size:0.88rem; margin:0 0 0.6rem 0; font-style:italic;}
+    .card p{color: #cfe7f8; margin:0 0 0.6rem 0; line-height:1.35;}
+    html[data-theme="light"] .card p{color:#1f2937;}
+
+    .card a{color:var(--accent); text-decoration:none; font-weight:600;}
+        .card a:hover{text-decoration:underline;}
+        .card a.pub-btn:hover{text-decoration:none;}
+
+        /* chips & tags */
+        .chip{display:inline-block; background:var(--glass); color:var(--muted); padding:0.2rem 0.45rem; border-radius:999px; font-size:0.8rem; margin-right:0.4rem; margin-top:0.4rem;}
+
+        /* Publication action buttons - minimal style */
+        .pub-actions{display:flex; gap:1rem; margin-top:0.8rem; flex-wrap:wrap;}
+        .pub-btn{display:inline-flex; align-items:center; gap:0.35rem; padding:0.4rem 0; text-decoration:none; font-size:0.82rem; font-weight:500; transition:all 0.2s ease; border-bottom:1px solid transparent; letter-spacing:0.01em;}
+        .pub-btn--pdf{color:#ff6b6b;}
+        .pub-btn--pdf:hover{color:#ff5252; border-bottom-color:#ff5252; transform:translateX(2px); text-decoration:none;}
+        .pub-btn--ads{color:#4a9eff;}
+        .pub-btn--ads:hover{color:#3b8eef; border-bottom-color:#3b8eef; transform:translateX(2px); text-decoration:none;}
+
+        /* responsive tweaks */
+        @media (max-width:720px){
+            .hero__left{flex:0 0 auto;}
+            .profile__image{width:110px; height:110px;}
+            .intro h1{font-size:1.4rem;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__brand">
+                <img src="assets/images/3_orizzontale.jpg" alt="Samuele Ronchini logo" class="nav__avatar">
+                <span class="nav__name">Samuele Ronchini</span>
+            </div>
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <div class="nav__links" id="primary-navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Research</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="outreach.html">Outreach</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- <div class="section-wrapper">
+            <div class="profile-buttons">
+                <a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Ronchini%2C%20Samuele%22" class="profile-btn ads" target="_blank" rel="noopener">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/icons/ads.svg#ads"/>
+                    </svg>
+                    NASA ADS
+                </a>
+                <a href="https://scholar.google.com/samuele-ronchini" class="profile-btn scholar" target="_blank" rel="noopener">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/icons/google-scholar.svg#scholar"/>
+                    </svg>
+                    Google Scholar
+                </a>
+                <a href="https://orcid.org/samuele-ronchini" class="profile-btn orcid" target="_blank" rel="noopener">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/icons/orcid.svg#orcid"/>
+                    </svg>
+                    ORCID
+                </a>
+                <a href="https://www.researchgate.net/samuele-ronchini" class="profile-btn researchgate" target="_blank" rel="noopener">
+                    <svg width="24" height="24" aria-hidden="true">
+                        <use href="assets/icons/researchgate.svg#researchgate"/>
+                    </svg>
+                    ResearchGate
+                </a>
+            </div>
+        </div> -->
+
+            <div class="section-heading" aria-hidden="true">
+                <a href="https://scixplorer.org/search?fq=%7B%21type%3Daqp+v%3D%24fq_property%7D&fq_property=(property%3A%22refereed%22)&n=10&p=1&q=author%3A%22Ronchini%2C+S.%22&sort=score+desc&sort=date+desc" 
+                   class="btn btn--secondary" 
+                   style="text-decoration: none; 
+                          border: 2px solid var(--accent);
+                          padding: 0.6rem 1rem;
+                          font-weight: 600;
+                          border-radius: 8px;
+                          transition: all 0.2s ease;
+                          background: var(--glass);
+                          box-shadow: 0 2px 8px rgba(109,211,255,0.1);" 
+                   target="_blank" 
+                   rel="noopener"
+                   onmouseover="this.style.background='var(--accent)';this.style.color='var(--bg)'" 
+                   onmouseout="this.style.background='var(--glass)';this.style.color='var(--muted)'">
+                    Full list of refereed publications including Samuele Ronchini
+                </a>
+                <div style="flex-grow:1;"></div>
+            </div>
+
+            <div class="intro">
+                <h1>Publication overview (updated November 2025)</h1>
+            </div>
+                             
+            <div class="card" style="margin-bottom:1.5rem;">
+                <ul style="list-style-type: disc; padding-left: 1.5rem; margin: 0;">
+                    <li style="margin-bottom: 0.5rem;"><strong>6</strong> papers as first author</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>17</strong> papers as co-author</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>43</strong> papers as member of the LIGO–Virgo–KAGRA collaboration</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>174</strong> GCN circulars as data analyst of the Swift–BAT subthreshold targeted search (<strong>85</strong> as first author)</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>22</strong> GCN circulars as member of the XRT-UVOT teams dedicated to the follow up of gravitational waves</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>2</strong> GCN circulars as member of the GRAWITA and ENGRAVE collaborations</li>
+                </ul>
+                <div style="margin-top:1rem; padding-top:1rem; border-top:1px solid var(--glass);">
+                    <p style="margin:0;"><strong>PhD Thesis:</strong> Awarded with the Bruno Rossi Prize for best PhD thesis in Astroparticle Physics<br>
+                    <span style="margin-top:0.3rem; display:inline-block;">Available: <a href="https://hdl.handle.net/20.500.12571/28804">here</a></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro">
+            <div class="section-heading" aria-hidden="true">
+                <!-- <span>Featured articles</span> -->
+                <h1>Featured articles</h1>
+            </div>
+            <div class="divider" role="separator" aria-hidden="true"></div>
+            <div class="article-list" aria-live="polite">
+                <article class="card publication-item" aria-labelledby="p2-title">
+                    <h3 id="p2-title">Constraining Possible γ-Ray Burst Emission from GW230529 Using Swift-BAT and Fermi-GBM</h3>
+                    <p class="meta">Ronchini, S., Bala, S., Wood, J., et al. (2024) — <em>Astrophysical Journal Letters</em>, 970(1), L20</p>
+                    <div class="pub-actions">
+                        <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ad5d74/pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                            📄 PDF
+                        </a>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...970L..20R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                            🔭 ADS
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="card publication-item" aria-labelledby="p3-title">
+                    <h3 id="p3-title">Perspectives for multimessenger astronomy with the next generation of gravitational-wave detectors and high-energy satellites</h3>
+                    <p class="meta">Ronchini, S., Branchesi, M., Oganesyan, G., et al. (2022) — <em>Astronomy & Astrophysics</em>, 665, A97</p>
+                    <div class="pub-actions">
+                        <a href="https://www.aanda.org/articles/aa/pdf/2022/09/aa43705-22.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                            📄 PDF
+                        </a>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2022A%26A...665A..97R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                            🔭 ADS
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card publication-item" aria-labelledby="p4-title">
+                    <h3 id="p4-title">Combined X-ray and optical analysis to probe the origin of the plateau emission in γ-ray burst afterglows</h3>
+                    <p class="meta">Ronchini, S., Stratta, G., Rossi, A., et al. (2023) — <em>Astronomy & Astrophysics</em>, 675, A117</p>
+                    <div class="pub-actions">
+                        <a href="https://www.aanda.org/articles/aa/pdf/2023/07/aa45348-22.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                            📄 PDF
+                        </a>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...675A.117R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                            🔭 ADS
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card publication-item" aria-labelledby="p1-title">
+                    <h3 id="p1-title">Spectral index-flux relation for investigating the origins of steep decay in γ-ray bursts</h3>
+                    <p class="meta">Ronchini, S., Oganesyan, G., Branchesi, M., et al. (2021) — <em>Nature Communications</em>, 12, 4040</p>
+                    <!-- <p>First-author publication in Nature Communications unveiling the physical origins of steep decay in gamma-ray bursts through spectral analysis.</p> -->
+                    <!-- <p><a href="https://doi.org/10.1038/s41467-021-24246-x" target="_blank" rel="noopener" aria-label="Read paper on Nature Communications">DOI: 10.1038/s41467-021-24246-x</a></p> -->
+                    <div class="pub-actions">
+                        <a href="https://www.nature.com/articles/s41467-021-24246-x.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                            📄 PDF
+                        </a>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2021NatCo..12.4040R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                            🔭 ADS
+                        </a>
+                    </div>
+                </article>
+
+
+                <article class="card publication-item" aria-labelledby="p5-title">
+                    <h3 id="p5-title">X-ray analysis of the accreting supermassive black hole in the radio galaxy PKS 2251+11</h3>
+                    <p class="meta">Ronchini, S., Tombesi, F., Vagnetti, F., et al. (2019) — <em>Astronomy & Astrophysics</em>, 625, A26</p>
+                    <div class="pub-actions">
+                        <a href="https://www.aanda.org/articles/aa/pdf/2019/05/aa35176-19.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                            📄 PDF
+                        </a>
+                        <a href="https://ui.adsabs.harvard.edu/abs/2019A%26A...625A..26R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                            🔭 ADS
+                        </a>
+                    </div>
+                </article>
+
+            <article class="card publication-item" aria-labelledby="p6-title">
+                <h3 id="p6-title">Ultra-long MeV transient from a relativistic jet: a tidal disruption event candidate</h3>
+                <p class="meta">Oganesyan, G., Kammoun, E., Ierardi, A., et al. (2025) — <em>Astronomy & Astrophysics</em>, in press</p>
+                <div class="pub-actions">
+                    <a href="https://arxiv.org/pdf/2507.18694.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf" aria-label="Download PDF">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250718694O" target="_blank" rel="noopener" class="pub-btn pub-btn--ads" aria-label="View on ADS">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p7-title">
+                <h3 id="p7-title">Swift-BAT GUANO Follow-up of Gravitational-wave Triggers in the Third LIGO–Virgo–KAGRA Observing Run</h3>
+                <p class="meta">Raman, G., Ronchini, S., Delaunay, J., et al. (2025) — <em>Astrophysical Journal</em>, 980(2), 207</p>
+                <div class="pub-actions">
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ad9749/pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..207R" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p8-title">
+                <h3 id="p8-title">The Science of the Einstein Telescope</h3>
+                <p class="meta">Abac, A., et al. (2025) — <em>Journal of Cosmology and Astroparticle Physics</em>, in press</p>
+                <div class="pub-actions">
+                    <a href="https://arxiv.org/pdf/2503.12263.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250312263A" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p9-title">
+                <h3 id="p9-title">BatAnalysis—A Comprehensive Python Pipeline for Swift BAT Time-tagged Event Data Analysis</h3>
+                <p class="meta">Parsotan, T., Palmer, D.M., Ronchini, S., et al. (2025) — <em>Astrophysical Journal</em>, 988(1), 23</p>
+                <div class="pub-actions">
+                    <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ade240/pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...988...23P" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p10-title">
+                <h3 id="p10-title">Prospects for optical detections from binary neutron star mergers with the next-generation multi-messenger observatories</h3>
+                <p class="meta">Loffredo, E., Hazra, N., Dupletsa, U., et al. (2025) — <em>Astronomy & Astrophysics</em>, 697, A36</p>
+                <div class="pub-actions">
+                    <a href="https://www.aanda.org/articles/aa/pdf/2025/05/aa52863-24.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2025A%26A...697A..36L" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p11-title">
+                <h3 id="p11-title">Pre-merger alert to detect prompt emission in very-high-energy gamma-rays from binary neutron star mergers: Einstein Telescope and Cherenkov Telescope Array synergy</h3>
+                <p class="meta">Banerjee, B., Oganesyan, G., Branchesi, M., et al. (2023) — <em>Astronomy & Astrophysics</em>, 678, A126</p>
+                <div class="pub-actions">
+                    <a href="https://www.aanda.org/articles/aa/pdf/2023/10/aa45850-23.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.126B" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p12-title">
+                <h3 id="p12-title">Science with the Einstein Telescope: a comparison of different designs</h3>
+                <p class="meta">Branchesi, M., Maggiore, M., Alonso, D., et al. (2023) — <em>Journal of Cosmology and Astroparticle Physics</em>, 2023(7), 068</p>
+                <div class="pub-actions">
+                    <a href="https://iopscience.iop.org/article/10.1088/1475-7516/2023/07/068/pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2023JCAP...07..068B" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p13-title">
+                <h3 id="p13-title">GWFISH: A simulation software to evaluate parameter-estimation capabilities of gravitational-wave detector networks</h3>
+                <p class="meta">Dupletsa, U., Harms, J., Banerjee, B., et al. (2023) — <em>Astronomy and Computing</em>, 42, 100671</p>
+                <div class="pub-actions">
+                    <a href="https://arxiv.org/pdf/2205.02499" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2023A%26C....4200671D" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p14-title">
+                <h3 id="p14-title">Gamma ray burst studies with THESEUS</h3>
+                <p class="meta">Ghirlanda, G., Salvaterra, R., Toffano, M., et al. (2021) — <em>Experimental Astronomy</em>, 52(3), 277-308</p>
+                <div class="pub-actions">
+                    <a href="https://link.springer.com/content/pdf/10.1007/s10686-021-09763-3.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2021ExA....52..277G" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            <article class="card publication-item" aria-labelledby="p15-title">
+                <h3 id="p15-title">Multi-messenger astrophysics with THESEUS in the 2030s</h3>
+                <p class="meta">Ciolfi, R., Stratta, G., Branchesi, M., et al. (2021) — <em>Experimental Astronomy</em>, 52(3), 245-275</p>
+                <div class="pub-actions">
+                    <a href="https://link.springer.com/content/pdf/10.1007/s10686-021-09795-9.pdf" target="_blank" rel="noopener" class="pub-btn pub-btn--pdf">
+                        📄 PDF
+                    </a>
+                    <a href="https://ui.adsabs.harvard.edu/abs/2021ExA....52..245C" target="_blank" rel="noopener" class="pub-btn pub-btn--ads">
+                        🔭 ADS
+                    </a>
+                </div>
+            </article>
+
+            </div>
+
+        <div class="section-wrapper" style="margin-top:2.0rem;">
+            <div class="section-heading">
+                <h2>Complete publication list</h2>
+            </div>
+            <div class="divider" role="separator" aria-hidden="true"></div>
+
+            <div class="card-grid" aria-live="polite">
+                <article class="card" aria-labelledby="s1">
+                    <h3 id="s1">NASA ADS</h3>
+                    <p>Browse all publications indexed on NASA Astrophysics Data System, including co-authored papers and collaboration publications.</p>
+                    <p><a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Ronchini%2C%20Samuele%22" target="_blank" rel="noopener" aria-label="View publications on ADS">View on ADS</a></p>
+                </article>
+
+                <article class="card" aria-labelledby="s2">
+                    <h3 id="s2">ORCID Profile</h3>
+                    <p class="meta">Verified publication record</p>
+                    <p>Access verified publication record with citation metrics and research outputs.</p>
+                    <p><a href="https://orcid.org/0000-0003-0020-687X" target="_blank" rel="noopener" aria-label="View ORCID profile">View ORCID</a></p>
+                </article>
+
+                <article class="card" aria-labelledby="s3">
+                    <h3 id="s3">GCN Circulars Archive</h3>
+                    <p class="meta">Real-time transient reports</p>
+                    <p> List of GCN circulars submitted as first authors.</p>
+                    <p><a href="https://gcn.nasa.gov/circulars?view=index&query=submitter%3A%22Samuele+Ronchini%22&startDate=&endDate=" target="_blank" rel="noopener" aria-label="GCN circulars">GCN Archive</a></p>
+                </article>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="mailto:samuele.ronchini@gssi.it">Email</a>
+            <a href="https://orcid.org/0000-0003-0020-687X">ORCID</a>
+            <a href="https://scholar.google.com/citations?hl=it&user=CRIAk_IAAAAJ">Google Scholar</a>
+            <a href="https://github.com/samueleronchini">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Samuele-Ronchini">ResearchGate</a>
+        </nav>
+        <p>&copy; <span data-year></span> Samuele Ronchini. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script>
+        // populate current year and enable minimal accessibility focus outline
+        (function(){
+            var el = document.querySelector('[data-year]');
+            if(el) el.textContent = new Date().getFullYear();
+            // only show focus outlines when navigating via keyboard
+            function handleFirstTab(e){
+                if(e.key === 'Tab'){
+                    document.documentElement.classList.add('user-is-tabbing');
+                    window.removeEventListener('keydown', handleFirstTab);
+                }
+            }
+            window.addEventListener('keydown', handleFirstTab);
+        })();
+    </script>
+</body>
+</html>

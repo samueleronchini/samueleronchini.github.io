@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Outreach &amp; Engagement | Dr. Samuele Ronchini</title>
+    <!-- Primary theme (existing) -->
+    <link rel="stylesheet" href="styles/dark-theme-new.css">
+    <meta name="color-scheme" content="dark light" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav__brand">
+                <img src="assets/images/3_orizzontale.jpg" alt="Samuele Ronchini logo" class="nav__avatar">
+                <span class="nav__name">Samuele Ronchini</span>
+            </div>
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            <div class="nav__links" id="primary-navigation">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="outreach.html" class="active">Outreach</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+            
+            <div class="hero__right">
+                <div class="intro">
+                    <h1>Outreach & Public Engagement</h1>
+                    <h2>Inspiring Future Scientists</h2>
+                    <p class="intro__bio">
+                        Committed to sharing the excitement of astrophysics research with students, educators, and the public. 
+                        From high school presentations to community events, making cutting-edge science accessible and inspiring.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-heading">
+            </div>
+            <div class="card-grid">
+                <article class="card outreach-item">
+                    <h3>Sharper Night of Researchers</h3>
+                    <div class="outreach-meta">
+                        <span>November 30, 2022</span>
+                        <span>Gran Sasso Science Institute</span>
+                    </div>
+                    <p>Talk for high school classes, introducing students to gravitational waves and multi-messenger astronomy.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <img src="assets/images/sharper1.jpg" alt="Sharper Night of Researchers presentation 1" style="width: 50%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="assets/images/sharper2.jpg" alt="Sharper Night of Researchers presentation 2" style="width: 50%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer;" onclick="openModal(this.src)">
+                    </div>
+                </article>
+                <article class="card outreach-item">
+                    <h3>AstroFest</h3>
+                    <div class="outreach-meta">
+                        <span>2023 &ndash; 2025</span>
+                        <span>Penn State Department of Astronomy</span>
+                    </div>
+                    <p>Engaged in explaining how we explore the energetic universe with Swift and through multi-messenger astronomy.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <img src="assets/images/astrofest1.jpg" alt="AstroFest presentation 1" style="width: 50%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer;" onclick="openModal(this.src)">
+                        <img src="assets/images/astrofest2.jpg" alt="AstroFest presentation 2" style="width: 50%; height: 200px; object-fit: cover; border-radius: 4px; cursor: pointer;" onclick="openModal(this.src)">
+                    </div>
+                </article>
+            </div>
+
+            <!-- Modal -->
+            <div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);" onclick="closeModal()">
+                <img id="modalImage" style="margin: auto; display: block; max-width: 90%; max-height: 90%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <span style="position: absolute; right: 35px; top: 15px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer;" onclick="closeModal()">&times;</span>
+            </div>
+
+            <script>
+                function openModal(imgSrc) {
+                    document.getElementById('imageModal').style.display = 'block';
+                    document.getElementById('modalImage').src = imgSrc;
+                }
+
+                function closeModal() {
+                    document.getElementById('imageModal').style.display = 'none';
+                }
+
+                // Close modal when pressing ESC key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        closeModal();
+                    }
+                });
+            </script>
+                <article class="card card--media outreach-item" style="grid-column: 1 / -1; padding: 0; background: transparent; box-shadow: none;">
+                    <div style="max-width:1200px; margin:0 auto; padding:0.75rem; box-sizing:border-box; width:100%;">
+                        <!-- Combined box: award text + embedded video -->
+                        <div style="background:var(--card-bg, #0b0b0b); border-radius:8px; padding:1rem; box-shadow:0 8px 20px rgba(0,0,0,0.5); display:flex; flex-direction:column; gap:0.75rem;">
+                            <div style="padding:0.25rem 0.5rem;">
+                                <h3 style="margin:0 0 0.25rem 0;">Science Communication Award</h3>
+                                <div class="outreach-meta" style="display:flex; gap:0.75rem; flex-wrap:wrap; color:var(--muted, #9aa3b2); font-size:0.95rem; margin-bottom:0.5rem;">
+                                </div>
+                                <p style="margin:0; color:var(--text, #dfe7ef);">
+                                    Here the video winner of the Springer Nature contest "<a href="https://www.nature.com/immersive/scienceinshorts/index.html" target="_blank">Science in Shorts</a>," reserved for researchers who published with the Nature group. Prize: 5000 €.
+                                </p>
+                            </div>
+
+                            <div style="width:100%; margin-top:0.5rem;">
+                                <div style="position:relative; width:100%; padding-top:56.25%; overflow:hidden; border-radius:6px; background:#000;">
+                                    <iframe
+                                        src="https://www.youtube.com/embed/Dn_0BnqNOlg"
+                                        title="Science in Shorts — presentation"
+                                        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                        loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- <section>
+            <div class="section-heading">
+                <span>Mentorship</span>
+                <h2>Training the next generation</h2>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Maia Williams – Swift Science Planner</h3>
+                    <p class="outreach-meta">January 2025 &ndash; Present</p>
+                    <p>Training on the subthreshold search with Swift-BAT/GUANO targeted on O4 GW candidates, developing skills in real-time transient analysis.</p>
+                </article>
+                <article class="card">
+                    <h3>Alessio Ludovico De Santis – PhD Candidate, GSSI</h3>
+                    <p class="outreach-meta">October 2024 &ndash; Present</p>
+                    <p>Supervising research project focused on refined analysis of the connection between short GRBs and neutron star merger populations.</p>
+                </article>
+            </div>
+        </section> -->
+    </main>
+
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="mailto:samuele.ronchini@gssi.it">Email</a>
+            <a href="https://orcid.org/0000-0003-0020-687X">ORCID</a>
+            <a href="https://scholar.google.com/citations?hl=it&user=CRIAk_IAAAAJ">Google Scholar</a>
+            <a href="https://github.com/samueleronchini">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Samuele-Ronchini">ResearchGate</a>
+        </nav>
+        <p>&copy; <span data-year></span> Samuele Ronchini. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js" defer></script>
+    <script>
+        // populate current year and enable minimal accessibility focus outline
+        (function(){
+            var el = document.querySelector('[data-year]');
+            if(el) el.textContent = new Date().getFullYear();
+            // only show focus outlines when navigating via keyboard
+            function handleFirstTab(e){
+                if(e.key === 'Tab'){
+                    document.documentElement.classList.add('user-is-tabbing');
+                    window.removeEventListener('keydown', handleFirstTab);
+                }
+            }
+            window.addEventListener('keydown', handleFirstTab);
+        })();
+    </script>
+</body>
+</html>
