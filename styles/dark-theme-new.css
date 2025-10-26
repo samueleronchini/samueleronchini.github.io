@@ -181,7 +181,7 @@ html[data-theme="light"] .nav__toggle:focus-visible {
 .nav__name {
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     letter-spacing: 0.5px;
 }
 
