@@ -61,22 +61,75 @@
     </header>
 
     <main>
-<section class="hero hero--landing" style="position: relative; width: 100%; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: url('assets/images/3_orizzontale.jpg') center/cover no-repeat;">
+<section class="hero hero--landing" style="
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  background: url('assets/images/3_orizzontale.jpg') center/cover no-repeat;
+">
 
-    <!-- Subtle overlay to reduce background intensity -->
-    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.2); z-index: 1;"></div>
+  <!-- Subtle overlay -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 1;
+  "></div>
 
-    <div class="hero__overlay" style="position: relative; z-index: 2; width: 100%; max-width: 1100px; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+  <!-- Left-aligned centered content box -->
+  <div class="hero__overlay" style="
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* vertical centering */
+    align-items: center;         /* horizontal centering */
+    gap: 2rem;
+    height: 110vh;                /* makes sure centering has space */
+    max-height: 1000px;
+    width: 100%;
+    max-width: 400px;
+    padding: 3rem 2rem;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    border-radius: 2rem;
+    margin-left: 5%;
+    box-sizing: border-box;
+    text-align: center;
+  ">
 
-        <!-- Profile: portrait, logos, name, affiliation -->
-        <div class="hero__profile" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; max-width: 350px;">
+    <!-- Profile -->
+    <div class="hero__profile" style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    ">
 
-            <div class="hero__portrait-wrap" style="width: 100%; max-width: 200px; height: 200px;">
-                <img src="assets/images/me_nobkg.001.png" alt="Portrait of Samuele Ronchini" class="hero__portrait" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-            </div>
+      <div class="hero__portrait-wrap" style="
+        width: 180px;
+        height: 180px;
+      ">
+        <img src="assets/images/me_nobkg.001.png"
+             alt="Portrait of Samuele Ronchini"
+             style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+      </div>
 
-            <!-- Logos / icons -->
-    <div class="hero__logos" style="display:flex; gap:0.75rem; margin-top:1rem; flex-wrap:wrap; align-items:center;">
+      <!-- Logos -->
+      <div class="hero__logos" style="
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      ">
+    <div class="hero__logos" style="display:flex; gap:0.25rem; margin-top:1rem; flex-wrap:wrap; align-items:center;">
       <a href="mailto:samuele.ronchini@gssi.it" style="display:flex; width:55px; height:55px; border-radius:50%; align-items:center; justify-content:center;">
         <img src="assets/icons/mail.png" alt="Email icon" style="width: 35px; height:35px; object-fit:contain;">
       </a>
@@ -92,29 +145,35 @@
       <a href="https://scixplorer.org/search?fq=%7B%21type%3Daqp+v%3D%24fq_property%7D&fq_property=(property%3A%22refereed%22)&n=10&p=1&q=author%3A%22Ronchini%2C+S.%22&sort=score+desc&sort=date+desc" style="display:flex; width:35px; height:35px; border-radius:50%; align-items:center; justify-content:center;">
         <img src="assets/icons/scix.png" alt="SciXplorer icon" style="width:35px; height:35px; object-fit:contain;">
       </a>
-    </div>
-            <!-- Name, position, affiliation -->
-            <div class="hero__info" style="text-align: center;">
-                <h1 style="margin:0; font-size:1.8rem;">Samuele Ronchini</h1>
-                <h2 style="margin:0.2rem 0; font-size:1.2rem; font-weight:400;">Postdoctoral Researcher in Astrophysics</h2>
-                <p style="margin:0; font-size:1rem;">
-                    <a href="https://www.gssi.it/" target="_blank" style="color:#ffffff;text-decoration:underline;">Gran Sasso Science Institute</a>
-                </p>
-            </div>
+    
+      </div>
 
-        </div>
-
-        <!-- Description -->
-        <div class="hero__description" style="width: 100%; max-width: 800px; text-align: left;">
-            <p style="margin:0; line-height:1.6; font-size:1rem;">
-                My research focuses on high-energy astrophysics, multi-messenger astronomy, and gravitational waves, with an emphasis on gamma-ray bursts and their connection to compact binary mergers. I contribute to real-time searches for electromagnetic counterparts of gravitational waves, developing and maintaining analysis pipelines for rapid multi-messenger follow-up. I am actively engaged in defining the science case for next-generation gravitational wave detectors and their synergy with high-energy observatories.
-            </p>
-        </div>
+      <!-- Info -->
+      <div class="hero__info" style="width:100%;">
+        <h1 style="margin:0; font-size:1.8rem;">Samuele Ronchini</h1>
+        <h2 style="margin:0.2rem 0; font-size:1.2rem; font-weight:400;">Postdoctoral Researcher in Astrophysics</h2>
+        <p style="margin:0; font-size:1rem;">
+          <a href="https://www.gssi.it/" target="_blank" style="color:#ffffff; text-decoration:underline;">Gran Sasso Science Institute</a>
+        </p>
+      </div>
 
     </div>
 
-</section>
-</section>
+    <!-- Description -->
+    <div class="hero__description" style="
+      width: 100%;
+      text-align: justify;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    ">
+      <p style="margin: 0;">
+        My research focuses on high-energy astrophysics, multi-messenger astronomy, and gravitational waves, with an emphasis on gamma-ray bursts and their connection to compact binary mergers. I contribute to real-time searches for electromagnetic counterparts of gravitational waves, developing and maintaining analysis pipelines for rapid multi-messenger follow-up. I am actively engaged in defining the science case for next-generation gravitational wave detectors and their synergy with high-energy observatories.
+      </p>
+    </div>
+
+  </div>
+
+</section></section>
         <section class="timeline">
             <h2>Academic Journey</h2>
             <div class="timeline__grid">
