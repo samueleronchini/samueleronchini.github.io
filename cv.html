@@ -182,10 +182,22 @@
         </iframe>
 
         <div class="cv-fallback" style="display:none;">
-            <p>Unable to display PDF inline.</p>
-            <p><a href="assets/docs/Samuele_Ronchini_CV.pdf" download>Click here to download the CV</a></p>
         </div>
     </div>
+
+    <script>
+        // Hide PDF viewer on mobile devices
+        (function(){
+            var iframe = document.querySelector('.cv-viewer');
+            var fallback = document.querySelector('.cv-fallback');
+            var container = document.querySelector('.cv-container');
+            
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768){
+                iframe.style.display = 'none';
+                fallback.style.display = 'block';
+            }
+        })();
+    </script>
 
 </main>
     <footer>
