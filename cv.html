@@ -157,78 +157,31 @@
         </nav>
     </header>
 
-<main style="
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  box-sizing: border-box;
-  padding: 1rem;
-  background-color: #0a0a0a;
-  color: #fff;
-">
-
-  <!-- Header -->
-  <div class="cv-header" style="
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  ">
-    <h1 style="font-size: 2rem; margin: 0;">Curriculum Vitae</h1>
-
-    <div class="cv-actions" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
-      <a href="assets/docs/Samuele_Ronchini_CV.pdf" download class="cv-btn cv-btn--primary"
-         style="padding: 0.6rem 1rem; border-radius: 0.5rem; background: #0078d7; color: #fff; text-decoration: none;">
-        📥 Download PDF
-      </a>
-      <a href="assets/docs/Samuele_Ronchini_CV.pdf" target="_blank" class="cv-btn"
-         style="padding: 0.6rem 1rem; border-radius: 0.5rem; background: #333; color: #fff; text-decoration: none;">
-        🔗 Open in New Tab
-      </a>
+<main>
+    <div class="cv-header">
+        <h1>Curriculum Vitae</h1>
+        <div class="cv-actions">
+            <a href="assets/docs/Samuele_Ronchini_CV.pdf" download class="cv-btn cv-btn--primary">
+                📥 Download PDF
+            </a>
+            <a href="assets/docs/Samuele_Ronchini_CV.pdf" target="_blank" class="cv-btn">
+                🔗 Open in New Tab
+            </a>
+        </div>
     </div>
-  </div>
 
-  <!-- PDF Container -->
-  <div class="cv-container" style="
-    width: 100%;
-    max-width: 1000px;
-    box-sizing: border-box;
-    border-radius: 0.75rem;
-    background: #1a1a1a;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  ">
-    <iframe
-      src="assets/docs/Samuele_Ronchini_CV.pdf#view=FitH"
-      class="cv-viewer"
-      title="Samuele Ronchini CV"
-      style="
-        width: 100%;
-        min-height: 70vh; /* fallback height */
-        height: 80vh;     /* adjust for mobile view */
-        border: none;
-        display: block;
-      ">
-    </iframe>
+    <div class="cv-container">
+        <iframe
+            src="assets/docs/Samuele_Ronchini_CV.pdf#view=FitH"
+            class="cv-viewer"
+            title="Samuele Ronchini CV">
+        </iframe>
 
-    <div class="cv-fallback" style="
-      display: none;
-      padding: 1rem;
-      text-align: center;
-      color: #ccc;
-    ">
-      <p>Unable to display PDF inline.</p>
-      <p><a href="assets/docs/Samuele_Ronchini_CV.pdf" download style="color:#0078d7;">Click here to download the CV</a></p>
+        <div class="cv-fallback" style="display:none;">
+            <p>Unable to display PDF inline.</p>
+            <p><a href="assets/docs/Samuele_Ronchini_CV.pdf" download>Click here to download the CV</a></p>
+        </div>
     </div>
-  </div>
 
 </main>
     <footer>
