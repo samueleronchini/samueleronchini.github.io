@@ -119,7 +119,7 @@
       ">
         <img src="assets/images/me_nobkg.001.png"
          alt="Portrait of Samuele Ronchini"
-         style="width: 100%; height: 100%; object-fit: contain; border-radius: 20px; border: 1px solid #ffffff;">
+         style="width: 100%; height: 100%; object-fit: contain; border-radius: 60px; border: 1px solid #ffffff;">
       </div>
 
       <!-- Logos -->
@@ -138,22 +138,57 @@
   justify-content: center;
   gap: 0.0rem; /* smaller gap for closer icons */
 ">
-  <a href="mailto:samuele.ronchini@gssi.it" style="display:flex; width:50px; height:40px; border-radius:50%; align-items:center; justify-content:center;">
+<style>
+  /* Icon hover effect */
+  .hero__logos a {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero__logos a:hover {
+    transform: scale(1.2); /* slightly enlarge */
+    box-shadow: 0 0 10px rgba(255,255,255,0.6); /* subtle glow */
+  }
+</style>
+
+<div class="hero__logos" style="
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+">
+  <a href="mailto:samuele.ronchini@gssi.it" style="display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; width:50px; height:50px; border-radius:50%; transition: background 0.2s ease;" 
+    onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.querySelector('.icon-label').style.display='block';" 
+    onmouseout="this.style.background='transparent'; this.querySelector('.icon-label').style.display='none';">
     <img src="assets/icons/mail.png" alt="Email icon" style="width:40px; height:40px; object-fit:contain;">
+    <span class="icon-label" style="display:none; position:absolute; top:55px; font-size:0.75rem; white-space:nowrap; background:rgba(0,0,0,0.8); padding:0.25rem 0.5rem; border-radius:4px;">Email</span>
   </a>
-  <a href="https://orcid.org/0000-0003-0020-687X" style="display:flex; width:50px; height:40px; border-radius:50%; align-items:center; justify-content:center;">
+  <a href="https://orcid.org/0000-0003-0020-687X" style="display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; width:50px; height:50px; border-radius:50%; transition: background 0.2s ease;" 
+    onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.querySelector('.icon-label').style.display='block';" 
+    onmouseout="this.style.background='transparent'; this.querySelector('.icon-label').style.display='none';">
     <img src="assets/icons/orcid_.png" alt="ORCID icon" style="width:40px; height:40px; object-fit:contain;">
+    <span class="icon-label" style="display:none; position:absolute; top:55px; font-size:0.75rem; white-space:nowrap; background:rgba(0,0,0,0.8); padding:0.25rem 0.5rem; border-radius:4px;">ORCID</span>
   </a>
-  <a href="https://github.com/samueleronchini" style="display:flex; width:50px; height:40px; border-radius:50%; align-items:center; justify-content:center;">
+  <a href="https://github.com/samueleronchini" style="display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; width:50px; height:50px; border-radius:50%; transition: background 0.2s ease;" 
+    onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.querySelector('.icon-label').style.display='block';" 
+    onmouseout="this.style.background='transparent'; this.querySelector('.icon-label').style.display='none';">
     <img src="assets/icons/github.png" alt="GitHub icon" style="width:40px; height:40px; object-fit:contain;">
+    <span class="icon-label" style="display:none; position:absolute; top:55px; font-size:0.75rem; white-space:nowrap; background:rgba(0,0,0,0.8); padding:0.25rem 0.5rem; border-radius:4px;">GitHub</span>
   </a>
-  <a href="https://www.researchgate.net/profile/Samuele-Ronchini" style="display:flex; width:50px; height:40px; border-radius:50%; align-items:center; justify-content:center;">
+  <a href="https://www.researchgate.net/profile/Samuele-Ronchini" style="display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; width:50px; height:50px; border-radius:50%; transition: background 0.2s ease;" 
+    onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.querySelector('.icon-label').style.display='block';" 
+    onmouseout="this.style.background='transparent'; this.querySelector('.icon-label').style.display='none';">
     <img src="assets/icons/rg.png" alt="ResearchGate icon" style="width:30px; height:30px; object-fit:contain;">
+    <span class="icon-label" style="display:none; position:absolute; top:55px; font-size:0.75rem; white-space:nowrap; background:rgba(0,0,0,0.8); padding:0.25rem 0.5rem; border-radius:4px;">ResearchGate</span>
   </a>
   <a href="https://scixplorer.org/search?fq=%7B%21type%3Daqp+v%3D%24fq_property%7D&fq_property=(property%3A%22refereed%22)&n=10&p=1&q=author%3A%22Ronchini%2C+S.%22&sort=score+desc&sort=date+desc"
-     style="display:flex; width:50px; height:40px; border-radius:50%; align-items:center; justify-content:center;">
+    style="display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; width:50px; height:50px; border-radius:50%; transition: background 0.2s ease;" 
+    onmouseover="this.style.background='rgba(255,255,255,0.15)'; this.querySelector('.icon-label').style.display='block';" 
+    onmouseout="this.style.background='transparent'; this.querySelector('.icon-label').style.display='none';">
     <img src="assets/icons/scix.png" alt="SciXplorer icon" style="width:40px; height:40px; object-fit:contain;">
+    <span class="icon-label" style="display:none; position:absolute; top:55px; font-size:0.75rem; white-space:nowrap; background:rgba(0,0,0,0.8); padding:0.25rem 0.5rem; border-radius:4px;">SciXplorer</span>
   </a>
+</div>
 </div>
       </div>
 
@@ -162,7 +197,7 @@
         <h1 style="margin:0; font-size:1.8rem; line-height:1.2;">Samuele Ronchini</h1>
         <h2 style="margin:0.2rem 0; font-size:1.1rem; font-weight:400; line-height:1.3;">Postdoctoral Researcher in Astrophysics</h2>
         <p style="margin:0; font-size:1rem;">
-          <a href="https://www.gssi.it/" target="_blank" style="color:#ffffff; text-decoration:underline;">Gran Sasso Science Institute</a>
+            <a href="https://www.gssi.it/" target="_blank" style="color:#fc9e56; text-decoration:underline; transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease; display:inline-block;" onmouseover="this.style.color='#ff8c00'; this.style.textShadow='0 0 8px rgba(255,140,0,0.6)'; this.style.transform='scale(1.1)';" onmouseout="this.style.color='#fc9e56'; this.style.textShadow='none'; this.style.transform='scale(1)';">Gran Sasso Science Institute</a>
         </p>
       </div>
     </div>
@@ -178,7 +213,7 @@
       padding-right: 0.3rem;
     ">
       <p style="margin: 0;">
-        My research focuses on high-energy astrophysics, multi-messenger astronomy, and gravitational waves, with an emphasis on gamma-ray bursts and their connection to compact binary mergers. I contribute to real-time searches for electromagnetic counterparts of gravitational waves, developing and maintaining analysis pipelines for rapid multi-messenger follow-up. I am actively engaged in defining the science case for next-generation gravitational wave detectors and their synergy with high-energy observatories.
+        My research focuses on high-energy astrophysics, multi-messenger astronomy, and gravitational waves, with an emphasis on gamma-ray bursts and their connection to compact binary mergers. I contribute to real-time searches for electromagnetic counterparts of gravitational waves, developing and maintaining analysis pipelines for rapid multi-messenger follow-up. I am actively engaged in defining the science case for next-generation gravitational wave detectors, leveraging their synergy with space and ground based astronomical observatories.
       </p>
     </div>
 
@@ -220,7 +255,7 @@
                         <p>Involved in the project 
   <a href="https://www.acme-astro.eu" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">
 ACME</a> 
- (the Astrophysics Centre for Multi-messenger studies in Europe), for the dissemination of multi-messenger tools and the facilitation of interaction between research infrastructures.</p>
+ (the Astrophysics Centre for Multi-messenger studies in Europe), disseminating multi-messenger tools and fostering interaction between research infrastructures.</p>
                     </div>
                 </div>
                 <div class="timeline__item">
@@ -230,8 +265,8 @@ ACME</a>
                         <p>
                               <a href="https://www.swift.psu.edu" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">
 Mission Operation Center</a> 
-of the Neil Gehrels Swift Observatory, Penn State University</p>
-<p>Member of the Institute of Gravitation and the Cosmos. </p>
+of the <a href="https://swift.gsfc.nasa.gov" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">Neil Gehrels Swift Observatory</a>, Penn State University</p>
+<p>Member of the <a href="https://igc.psu.edu" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: underline;">Institute of Gravitation and the Cosmos</a>.</p>
                     </div>
                 </div>
                 <div class="timeline__item">
